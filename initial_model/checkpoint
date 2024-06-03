@@ -1,0 +1,2 @@
+model_checkpoint_path: "optimization_attempt_weights"
+all_model_checkpoint_paths: "optimization_attempt_weights"
