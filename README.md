@@ -3,17 +3,17 @@ The objective of this project is to create a binary classifier that predicts app
 
 ## Dataset Information and Preprocessing Steps
 Below are the columns in the dataset provided by the company that includes information about the applicants and their campaign outcomes.
-  * EIN and NAME — Identification columns
-  * APPLICATION_TYPE — Alphabet Soup application type
-  * AFFILIATION — Affiliated sector of industry
-  * CLASSIFICATION — Government organization classification
-  * USE_CASE — Use case for funding
-  * ORGANIZATION — Organization type
-  * STATUS — Active status
-  * INCOME_AMT — Income classification
-  * SPECIAL_CONSIDERATIONS — Special considerations for application
-  * ASK_AMT — Funding amount requested
-  * IS_SUCCESSFUL — Was the money used effectively
+  * `EIN` and `NAME` — Identification columns
+  * `APPLICATION_TYPE` — Alphabet Soup application type
+  * `AFFILIATION` — Affiliated sector of industry
+  * `CLASSIFICATION` — Government organization classification
+  * `USE_CASE` — Use case for funding
+  * `ORGANIZATION` — Organization type
+  * `STATUS` — Active status
+  * `INCOME_AMT` — Income classification
+  * `SPECIAL_CONSIDERATIONS` — Special considerations for application
+  * `ASK_AMT` — Funding amount requested
+  * `IS_SUCCESSFUL` — Was the money used effectively
 
 The first steps of preprocessing involved removing the EIN and NAME columns completely from the imported DataFrame. Bucketing was then used to reduced the number of values within the APPLICATION_TYPE and the CLASSIFICATION columns. Unique values with the lowest counts were relabeled as "Other".
 
@@ -46,6 +46,7 @@ The model's performance was the same as that seen in Optimization Attempt #1.
 
 
 ### Optimization of Neural Network Using KerasTuner
+As a final attempt at optimization, KeraTuner was introduced as a way to find the hyperparameters of the model with the best accuracy. KerasTuner uses different combinations of hyperparameters (think activation functions, number of neurons, number of layers, etc.), builds the defined neural network, and makes predictions using the test dataset. Below are the results of the best model's accuracy.
 <img src="imgs/keras_tuner_results.png">
 
 The best model determined by KerasTuning optimization had the following hyperparameters:
