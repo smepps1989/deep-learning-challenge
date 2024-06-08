@@ -24,6 +24,7 @@ Prior to splitting the data into training and testing sets, the remaining catego
 ## Neural Network Results
 ### Initial Neural Network
 The first neural network consisted of three layers with the first two layers using Rectified Linear Unit (ReLU) as the activation function and the final layer using the sigmod activation function. Below is a summary of that network.
+<img src="imgs/initial_neural_network.png">
 
 After training the model with the training data, the model was tested for accuracy on the testing data. Below are its performance results.
 <img src="imgs/initial_accuracy.png">
@@ -31,12 +32,18 @@ After training the model with the training data, the model was tested for accura
 It can be seen that the loss was over 1.05, which indicates that the model seemed to not use the data at all in its predictions, but still had an accuracy rate of 73%.
 ### Optimization Attempt 1
 The process was repeated, only this time, the network was built with less neurons in its second layer and the number of epochs was increased from 100 to 200. Below is an image of its summary.
+<img src="imgs/optimization1_neural_network.png">
 
 These are the results of this model's performance on the test data
 <img src="imgs/opt_1_accuracy.png">
 
 ### Optimization Attempt 2
+The neural network built for this optimization attempt involved leaving much of the hyperparamters from optimization attempt #1 the same, however, as a preprocessing step, APPLICATION_TYPE was removed from the initial DataFrame and was not considered in the training/test phase. The decision to do this was made because a very large majority of submitted applications (27,037 applications of 32499) were T3 with the second most being around 1,500. Below is a summary of that neural network.
+<img src="imgs/optimization2_neural_network.png">
+
+The model's performance was the same as that seen in Optimization Attempt #1.
 <img src="imgs/opt_2_accuracy.png">
+
 
 ### Optimization of Neural Network Using KerasTuner
 <img src="imgs/keras_tuner_results.png">
